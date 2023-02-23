@@ -12,7 +12,7 @@ const schemas = require("../../schemas/contacts");
 
 const router = express.Router();
 
-// router.get("/", ctrlWrapper(ctrl.getAll));
+router.get("/", ctrlWrapper(ctrl.getAll));
 
 // router.get("/:contactId", ctrlWrapper(ctrl.getById));
 
