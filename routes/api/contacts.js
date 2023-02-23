@@ -18,7 +18,7 @@ router.get("/", ctrlWrapper(ctrl.getAll));
 
 router.post("/", ctrlWrapper(ctrl.addContact));
 
-router.post("/", validateBody(schemas.add), ctrlWrapper(ctrl.addContact));
+router.post("/", validateBody(schemas.addSchema), ctrlWrapper(ctrl.addContact));
 
 // router.delete("/:contactId", ctrlWrapper(ctrl.removeContactById));
 
