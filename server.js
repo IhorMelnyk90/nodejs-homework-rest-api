@@ -2,7 +2,7 @@ const app = require("./app");
 
 const mongoose = require("mongoose");
 
-// mongoose.set("strictQuery", true);
+mongoose.set("strictQuery", true);
 
 require("dotenv").config();
 
