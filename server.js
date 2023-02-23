@@ -6,11 +6,7 @@ mongoose.set("strictQuery", true);
 
 require("dotenv").config();
 
-const DB_HOST =
-  "mongodb+srv://Ihor:lMRlIJxEbIC7VN8Y@cluster0.bwmw3st.mongodb.net/db-contacts?retryWrites=true&w=majority";
-const PORT = 3001;
-
-// const { DB_HOST, PORT = 3001 } = process.env;
+const { DB_HOST, PORT = 3001 } = process.env;
 
 mongoose
   .connect(DB_HOST)
