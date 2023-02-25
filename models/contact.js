@@ -1,5 +1,6 @@
 const { Schema, model } = require("mongoose");
 const Joi = require("joi");
+const {handleMongooseError} = ("../helpers")
 
 
 const contactSchema = new Schema({
@@ -17,7 +18,10 @@ const contactSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  
 });
+
+contactSchema.post("save", handleMongooseError);
 
 const Contact = model("contact", contactSchema);
 
@@ -28,6 +32,7 @@ const addSchema = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().required(),
   phone: Joi.string().required(),
+  favorite: Joi.boolean(),
 });
 
 const schemas = {
