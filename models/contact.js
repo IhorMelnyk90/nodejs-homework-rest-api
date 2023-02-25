@@ -17,11 +17,10 @@ const contactSchema = new Schema({
   favorite: {
     type: Boolean,
     default: false,
-  },
-  
+  },  
 });
 
-contactSchema.post("save", handleMongooseError);
+// contactSchema.post("save", handleMongooseError);
 
 const Contact = model("contact", contactSchema);
 
