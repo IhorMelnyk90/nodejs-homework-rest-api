@@ -4,7 +4,6 @@ const { userSchemas } = require("../../models");
 const { ctrlWrapper } = require("../../helpers");
 const ctrl = require("../../controllers/users");
 
-
 const router = express.Router();
 
 router.post(
@@ -12,6 +11,10 @@ router.post(
   validateBody(userSchemas.registerSchema),
   ctrlWrapper(ctrl.register)
 );
+
+router.get("/verify/:verificationCode", ctrlWrapper(ctrl.verifyEmail));
+
+router.post("/verify", validateBody(userSchemas.emailSchema), ctrlWrapper(ctrl.resendVerifyEmail))
 
 router.post(
   "/login",
